@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fcth Michee | Links</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #121a2b;
+      --card-2: #182338;
+      --text: #f4f7fb;
+      --muted: #a8b3c7;
+      --accent: #5ec6ff;
+      --accent-2: #8bffb0;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: linear-gradient(180deg, #09101b, #0d1626 60%, #0a101a);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 720px;
+    }
+    .hero {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+    .avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #08111d;
+      font-weight: 800;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    h1 { margin: 0 0 8px; font-size: 2rem; }
+    .tagline { margin: 0; color: var(--muted); line-height: 1.6; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .link {
+      display: block;
+      text-decoration: none;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--card), var(--card-2));
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px 18px;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .link:hover { transform: translateY(-2px); border-color: rgba(94,198,255,.45); }
+    .label { font-weight: 700; display: block; margin-bottom: 4px; }
+    .sub { color: var(--muted); font-size: .95rem; }
+    .section {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+    }
+    .section h2 { margin: 0 0 8px; font-size: 1.05rem; }
+    .note { color: var(--muted); margin: 0; line-height: 1.6; }
+    footer { text-align: center; color: var(--muted); margin: 18px 0 4px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="avatar">FM</div>
+      <h1>Fcth Michee</h1>
+      <p class="tagline">PC Builds & Performance<br>Open-source tools for gamers & streamers<br>Discord Community · GitHub Projects<br>Tierhilfe Augsburg im Aufbau</p>
+
+      <div class="grid">
+        <a class="link" href="https://github.com/FtchMichee" target="_blank" rel="noopener noreferrer">
+          <span class="label">GitHub</span>
+          <span class="sub">Open-source Projekte und Repositories</span>
+        </a>
+        <a class="link" href="https://discord.gg/Mngyj7wEB" target="_blank" rel="noopener noreferrer">
+          <span class="label">Discord</span>
+          <span class="sub">Community, Austausch und Updates</span>
+        </a>
+        <a class="link" href="https://x.com/FcthMichee" target="_blank" rel="noopener noreferrer">
+          <span class="label">X / Twitter</span>
+          <span class="sub">Tech, Updates und Gedanken</span>
+        </a>
+        <a class="link" href="https://www.twitch.tv/fcthmichee" target="_blank" rel="noopener noreferrer">
+          <span class="label">Twitch</span>
+          <span class="sub">Streams und Live-Content</span>
+        </a>
+        <a class="link" href="https://www.instagram.com/builds.byfcthmichee/" target="_blank" rel="noopener noreferrer">
+          <span class="label">Instagram Builds</span>
+          <span class="sub">PC Builds und Setup-Content</span>
+        </a>
+        <a class="link" href="#">
+          <span class="label">Steam</span>
+          <span class="sub">Hier deinen Steam-Link eintragen</span>
+        </a>
+        <a class="link" href="#">
+          <span class="label">PlayStation</span>
+          <span class="sub">Hier deinen PSN / PS Plus Link eintragen</span>
+        </a>
+        <a class="link" href="#">
+          <span class="label">Tierhilfe Augsburg</span>
+          <span class="sub">Hier Vereins- oder Projektlink eintragen</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Hinweis</h2>
+      <p class="note">Diese Seite ist bewusst einfach gehalten, damit du sie direkt auf GitHub Pages hochladen kannst. Ersetze nur noch die Platzhalter-Links für Steam, PlayStation und Tierhilfe durch deine echten URLs.</p>
+    </section>
+
+    <footer>Made for GitHub Pages</footer>
+  </main>
+</body>
+</html>
