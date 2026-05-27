@@ -6,40 +6,51 @@
   <title>Fcth Michee | Links</title>
   <style>
     :root {
-      --bg: #0a0f18;
-      --panel: #121a28;
-      --panel-2: #182235;
-      --text: #eef3fb;
-      --muted: #9fb0c9;
-      --accent: #68c7ff;
-      --accent-2: #8effb8;
-      --border: rgba(255,255,255,0.08);
+      --bg: #07111d;
+      --bg-2: #0b1728;
+      --panel: rgba(17, 28, 46, 0.82);
+      --panel-2: rgba(22, 35, 56, 0.95);
+      --text: #eef4ff;
+      --muted: #a5b6d4;
+      --border: rgba(255,255,255,0.09);
+      --glow: rgba(87, 182, 255, 0.18);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background: linear-gradient(180deg, #09111b, #0b1320 55%, #091019);
       color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(61,139,255,0.16), transparent 30%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
       min-height: 100vh;
-      padding: 24px;
+      padding: 28px 18px;
     }
-    .wrap { max-width: 760px; margin: 0 auto; }
-    .hero, .note {
-      background: rgba(255,255,255,0.03);
+    .wrap { max-width: 820px; margin: 0 auto; }
+    .panel, .footer-note {
+      background: linear-gradient(180deg, rgba(13,22,37,.94), rgba(10,17,30,.94));
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+      border-radius: 28px;
+      box-shadow: 0 16px 44px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.03);
+      backdrop-filter: blur(10px);
+    }
+    .panel { padding: 28px; }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 24px;
     }
     .avatar {
-      width: 88px;
-      height: 88px;
+      width: 108px;
+      height: 108px;
       border-radius: 50%;
       overflow: hidden;
-      margin-bottom: 16px;
-      border: 2px solid rgba(255,255,255,.14);
-      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      border: 2px solid rgba(255,255,255,0.12);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      background: #101826;
+      flex: 0 0 auto;
     }
     .avatar img {
       width: 100%;
@@ -47,70 +58,155 @@
       object-fit: cover;
       display: block;
     }
-    h1 { margin: 0 0 8px; font-size: 2rem; }
-    .bio { margin: 0; color: var(--muted); line-height: 1.7; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+    }
+    .bio {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.03rem;
+    }
+    .section-title {
+      margin: 26px 0 12px;
+      color: #8ea3c8;
+      font-size: .9rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
-      margin-top: 22px;
     }
-    a.card {
-      display: block;
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
       text-decoration: none;
       color: var(--text);
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 16px 18px;
-      transition: transform .18s ease, border-color .18s ease;
+      background: linear-gradient(180deg, rgba(20,31,51,.96), rgba(19,30,49,.82));
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 20px;
+      padding: 16px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+      min-height: 82px;
     }
-    a.card:hover { transform: translateY(-2px); border-color: rgba(104,199,255,.45); }
-    .title { display: block; font-weight: 700; margin-bottom: 4px; }
-    .sub { color: var(--muted); font-size: .95rem; }
-    .section-title { margin: 24px 0 10px; color: var(--muted); font-size: .95rem; letter-spacing: .04em; text-transform: uppercase; }
-    .note { margin-top: 18px; }
-    .note p { margin: 0; color: var(--muted); line-height: 1.7; }
-    code { color: var(--accent); }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(112,188,255,.35);
+      box-shadow: 0 10px 24px var(--glow);
+    }
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.07);
+      flex: 0 0 auto;
+    }
+    .icon img {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+    .text { min-width: 0; }
+    .title { display: block; font-weight: 700; font-size: 1.02rem; margin-bottom: 3px; }
+    .sub { display: block; color: var(--muted); font-size: .94rem; }
+    .footer-note {
+      margin-top: 18px;
+      padding: 20px 22px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    @media (max-width: 700px) {
+      .grid { grid-template-columns: 1fr; }
+      .panel { padding: 22px; }
+      .avatar { width: 92px; height: 92px; }
+    }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <section class="hero">
-      <div class="avatar">
-        <img src="IMG_0878-1.jpg" alt="Profilbild von Fcth Michee" />
+    <section class="panel">
+      <div class="hero">
+        <div class="avatar">
+          <img src="profile.jpg" alt="Profilbild von Fcth Michee">
+        </div>
+        <div>
+          <h1>Fcth Michee</h1>
+          <p class="bio">PC Builds & Performance<br>Open-source tools for gamers & streamers<br>Discord Community · GitHub Projects<br>Tierhilfe Augsburg im Aufbau</p>
+        </div>
       </div>
-      <h1>Fcth Michee</h1>
-      <p class="bio">PC Builds & Performance<br>Open-source tools for gamers & streamers<br>Discord Community · GitHub Projects<br>Tierhilfe Augsburg im Aufbau</p>
 
       <div class="section-title">Tech & Community</div>
       <div class="grid">
-        <a class="card" href="https://github.com/FtchMichee" target="_blank" rel="noopener noreferrer"><span class="title">GitHub</span><span class="sub">Open-source Projekte und Repositories</span></a>
-        <a class="card" href="https://www.instagram.com/ftch_miche/" target="_blank" rel="noopener noreferrer"><span class="title">Instagram</span><span class="sub">Hauptprofil</span></a>
-        <a class="card" href="https://www.instagram.com/builds.byftchmichee/" target="_blank" rel="noopener noreferrer"><span class="title">Instagram PC-Builds</span><span class="sub">Builds, Setup und Performance</span></a>
-        <a class="card" href="https://x.com/FtchMichee" target="_blank" rel="noopener noreferrer"><span class="title">X / Twitter</span><span class="sub">Updates, Tech und Gedanken</span></a>
-        <a class="card" href="https://www.twitch.tv/ftchmichee" target="_blank" rel="noopener noreferrer"><span class="title">Twitch</span><span class="sub">Streams und Live-Content</span></a>
-        <a class="card" href="https://www.youtube.com/@FtchMichee" target="_blank" rel="noopener noreferrer"><span class="title">YouTube</span><span class="sub">Videos und Content</span></a>
-        <a class="card" href="https://open.spotify.com/user/3156ytbg3cx2wc556cfqakhnuijm" target="_blank" rel="noopener noreferrer"><span class="title">Spotify</span><span class="sub">Musik und Playlists</span></a>
-        <a class="card" href="https://steamcommunity.com/profiles/76561197980357449/" target="_blank" rel="noopener noreferrer"><span class="title">Steam</span><span class="sub">Gaming-Profil</span></a>
+        <a class="card" href="https://github.com/FtchMichee" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub Logo"></span>
+          <span class="text"><span class="title">GitHub</span><span class="sub">Open-source Projekte und Repositories</span></span>
+        </a>
+        <a class="card" href="https://www.instagram.com/ftch_miche/" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram Logo"></span>
+          <span class="text"><span class="title">Instagram</span><span class="sub">Hauptprofil</span></span>
+        </a>
+        <a class="card" href="https://www.instagram.com/builds.byftchmichee/" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram Logo"></span>
+          <span class="text"><span class="title">Instagram PC-Builds</span><span class="sub">Builds, Setup und Performance</span></span>
+        </a>
+        <a class="card" href="https://x.com/FtchMichee" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/x/ffffff" alt="X Logo"></span>
+          <span class="text"><span class="title">X / Twitter</span><span class="sub">Updates, Tech und Gedanken</span></span>
+        </a>
+        <a class="card" href="https://www.twitch.tv/ftchmichee" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/twitch/ffffff" alt="Twitch Logo"></span>
+          <span class="text"><span class="title">Twitch</span><span class="sub">Streams und Live-Content</span></span>
+        </a>
+        <a class="card" href="https://www.youtube.com/@FtchMichee" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/youtube/ffffff" alt="YouTube Logo"></span>
+          <span class="text"><span class="title">YouTube</span><span class="sub">Videos und Content</span></span>
+        </a>
+        <a class="card" href="https://open.spotify.com/user/3156ytbg3cx2wc556cfqakhnuijm" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/spotify/ffffff" alt="Spotify Logo"></span>
+          <span class="text"><span class="title">Spotify</span><span class="sub">Musik und Playlists</span></span>
+        </a>
+        <a class="card" href="https://steamcommunity.com/profiles/76561197980357449/" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/steam/ffffff" alt="Steam Logo"></span>
+          <span class="text"><span class="title">Steam</span><span class="sub">Gaming-Profil</span></span>
+        </a>
       </div>
 
       <div class="section-title">Weitere Profile</div>
       <div class="grid">
-        <a class="card" href="#" onclick="return false;"><span class="title">Discord</span><span class="sub">Username: miche089</span></a>
-        <a class="card" href="#" onclick="return false;"><span class="title">PlayStation</span><span class="sub">PSN: tyler__durden_89</span></a>
+        <div class="card">
+          <span class="icon"><img src="https://cdn.simpleicons.org/discord/ffffff" alt="Discord Logo"></span>
+          <span class="text"><span class="title">Discord</span><span class="sub">miche089</span></span>
+        </div>
+        <div class="card">
+          <span class="icon"><img src="https://cdn.simpleicons.org/playstation/ffffff" alt="PlayStation Logo"></span>
+          <span class="text"><span class="title">PlayStation</span><span class="sub">tyler__durden_89</span></span>
+        </div>
       </div>
 
       <div class="section-title">Tierhilfe Augsburg</div>
       <div class="grid">
-        <a class="card" href="http://tierhilfe-augsburg.de/" target="_blank" rel="noopener noreferrer"><span class="title">Tierhilfe Augsburg Website</span><span class="sub">Website des Projekts</span></a>
-        <a class="card" href="https://www.instagram.com/tierhilfe_augsburg/" target="_blank" rel="noopener noreferrer"><span class="title">Tierhilfe Augsburg Instagram</span><span class="sub">Instagram-Profil des Projekts</span></a>
+        <a class="card" href="http://tierhilfe-augsburg.de/" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/googlechrome/ffffff" alt="Website Icon"></span>
+          <span class="text"><span class="title">Tierhilfe Augsburg Website</span><span class="sub">Website des Projekts</span></span>
+        </a>
+        <a class="card" href="https://www.instagram.com/tierhilfe_augsburg/" target="_blank" rel="noopener noreferrer">
+          <span class="icon"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="Instagram Logo"></span>
+          <span class="text"><span class="title">Tierhilfe Augsburg Instagram</span><span class="sub">Instagram-Profil des Projekts</span></span>
+        </a>
       </div>
     </section>
 
-    <section class="note">
-      <p><strong>Hinweis:</strong> Discord und PlayStation wurden als Benutzername/PSN eingetragen, weil kein direkter öffentlicher klickbarer Link vorliegt.</p>
-      <p style="margin-top:10px;">Für GitHub Pages müssen <code>index.html</code> und das Bild <code>IMG_0878-1.jpg</code> zusammen im Repo-Root liegen.</p>
+    <section class="footer-note">
+      Discord und PlayStation sind aktuell als Profilnamen hinterlegt. Wenn du dafür noch direkte öffentliche Links hast, kann ich sie auch klickbar machen.
     </section>
   </main>
 </body>
